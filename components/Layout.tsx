@@ -60,7 +60,7 @@ export default function Layout({ selectedAge, setSelectedAge, children }: Layout
                 {children}
             </main>
 
-            <SpeedInsights />
+            <SpeedInsights/>
             <Analytics/>
 
             {/* 제휴 안내 텍스트 */}
