@@ -1,6 +1,7 @@
 import { ReactNode } from 'react';
 import Link from 'next/link';
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Analytics } from "@vercel/analytics/next"
 
 const ages = ['전체', '10대', '20대', '30대', '40대', '50대', '60대', '70대', '80대', '90대', '100대'];
 
@@ -60,6 +61,7 @@ export default function Layout({ selectedAge, setSelectedAge, children }: Layout
             </main>
 
             <SpeedInsights />
+            <Analytics/>
 
             {/* 제휴 안내 텍스트 */}
             <div style={{
