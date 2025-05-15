@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 import Link from 'next/link';
-import { SpeedInsights } from "@vercel/speed-insights/next"
-import { Analytics } from "@vercel/analytics/next"
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/next";
 
 const ages = ['전체', '10대', '20대', '30대', '40대', '50대', '60대', '70대', '80대', '90대', '100대'];
 
@@ -16,8 +16,10 @@ export default function Layout({ selectedAge, setSelectedAge, children }: Layout
         <div>
             <nav style={{
                 display: 'flex',
+                overflowX: 'auto',
+                whiteSpace: 'nowrap',
                 gap: 12,
-                padding: '16px 32px',
+                padding: '12px 16px',
                 borderBottom: '1px solid #ccc',
                 backgroundColor: '#f8f8f8',
                 position: 'sticky',
@@ -33,7 +35,8 @@ export default function Layout({ selectedAge, setSelectedAge, children }: Layout
                         padding: '8px 16px',
                         borderRadius: '4px',
                         cursor: 'pointer',
-                        textDecoration: 'none'
+                        textDecoration: 'none',
+                        flexShrink: 0
                     };
 
                     if (setSelectedAge) {
@@ -56,34 +59,39 @@ export default function Layout({ selectedAge, setSelectedAge, children }: Layout
                 })}
             </nav>
 
-            <main style={{padding: 32}}>
+            <main style={{
+                padding: '24px',
+                paddingLeft: 'max(16px, 4vw)',
+                paddingRight: 'max(16px, 4vw)'
+            }}>
                 {children}
             </main>
 
-            <SpeedInsights/>
-            <Analytics/>
+            <SpeedInsights />
+            <Analytics />
 
-            {/* 제휴 안내 텍스트 */}
             <div style={{
                 textAlign: 'center',
                 fontSize: '14px',
                 color: '#666',
-                paddingTop: '32px'
+                paddingTop: '32px',
+                paddingLeft: '16px',
+                paddingRight: '16px'
             }}>
                 ※ 이 사이트는 YES24 및 Amazon 제휴 프로그램을 통해 운영되며,<br />
                 도서 구매 시 제작자에게 소정의 수익이 돌아옵니다.
             </div>
 
-            {/* 제휴 배너 영역 */}
             <div style={{
                 display: 'flex',
+                flexWrap: 'wrap',
+                flexDirection: 'row',
                 justifyContent: 'center',
-                gap: '32px',
+                gap: '16px',
                 padding: '24px 0',
                 background: '#f9f9f9',
                 borderTop: '1px solid #ddd'
             }}>
-                {/* YES24 배너 */}
                 {process.env.NEXT_PUBLIC_YES24_BANNER && (
                     <>
                         <a
@@ -112,7 +120,6 @@ export default function Layout({ selectedAge, setSelectedAge, children }: Layout
                     </>
                 )}
 
-                {/* Amazon 배너 */}
                 {process.env.NEXT_PUBLIC_AMAZON_BANNER && (
                     <a
                         target="_blank"
