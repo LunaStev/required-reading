@@ -69,11 +69,13 @@ export default function Home({ books }: HomeProps) {
                             <Link href={`/book/${book.id}`} className="card">
                                 <div className="title">{book.title}</div>
                                 <div className="meta">
-                                    저자: {book.author} / {selectedAge === "전체" ? `${book.age} / ` : ''}{book.description}
+                                    저자: <bdi>{book.author}</bdi> /
+                                    {selectedAge === "전체" ? `${book.age} / ` : ''}
+                                    <bdi>{book.description}</bdi>
                                 </div>
                             </Link>
                             {index < filteredBooks.length - 1 && (
-                                <hr className="my-4 border-gray-300" />
+                                <hr className="my-4 border-gray-300"/>
                             )}
                         </div>
                     ))
