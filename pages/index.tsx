@@ -43,7 +43,7 @@ type HomeProps = {
 export default function Home({ books }: HomeProps) {
     const router = useRouter();
     const rawAge = router.query.age;
-    const queryAge = typeof rawAge === 'string' ? rawAge : '20대';
+    const queryAge = typeof rawAge === 'string' ? rawAge : '전체';
     const [selectedAge, setSelectedAge] = useState<string>(queryAge);
 
     useEffect(() => {
