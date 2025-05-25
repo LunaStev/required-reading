@@ -52,7 +52,7 @@ export default function BookDetail({ book }: BookDetailProps) {
         <Layout selectedAge={book.age}>
             <Head>
                 <title>{book.title} - 필독서 정보</title>
-                <meta name="description" content={`"${book.title}"의 필독서 정보 및 요약`} />
+                <meta name="description" content={`${book.title} - ${book.description || '추천 도서'}`} />
             </Head>
             <div className="book-detail-container">
                 <h1>{book.title}</h1>
