@@ -14,44 +14,24 @@ type LayoutProps = {
 export default function Layout({ selectedAge, setSelectedAge, children }: LayoutProps) {
     return (
         <div>
-            <nav style={{
-                display: 'flex',
-                overflowX: 'auto',
-                whiteSpace: 'nowrap',
-                gap: 12,
-                padding: '12px 16px',
-                borderBottom: '1px solid #ccc',
-                backgroundColor: '#f8f8f8',
-                position: 'sticky',
-                top: 0,
-                zIndex: 1000
-            }}>
+            <nav className="age-nav">
                 {ages.map((age) => {
                     const isSelected = age === selectedAge;
-                    const style = {
-                        backgroundColor: isSelected ? '#333' : '#eee',
-                        color: isSelected ? '#fff' : '#000',
-                        border: 'none',
-                        padding: '8px 16px',
-                        borderRadius: '4px',
-                        cursor: 'pointer',
-                        textDecoration: 'none',
-                        flexShrink: 0
-                    };
+                    const className = `age-nav-button ${isSelected ? 'selected' : ''}`;
 
                     if (setSelectedAge) {
                         return (
                             <button
                                 key={age}
                                 onClick={() => setSelectedAge(age)}
-                                style={style}
+                                className={className}
                             >
                                 {age}
                             </button>
                         );
                     } else {
                         return (
-                            <Link key={age} href={`/?age=${encodeURIComponent(age)}`} style={style}>
+                            <Link key={age} href={`/?age=${encodeURIComponent(age)}`} className={className}>
                                 {age}
                             </Link>
                         );
@@ -59,39 +39,17 @@ export default function Layout({ selectedAge, setSelectedAge, children }: Layout
                 })}
             </nav>
 
-            <main style={{
-                padding: '24px',
-                paddingLeft: 'max(16px, 4vw)',
-                paddingRight: 'max(16px, 4vw)'
-            }}>
-                {children}
-            </main>
+            <main className="main-content">{children}</main>
 
             <SpeedInsights />
             <Analytics />
 
-            <div style={{
-                textAlign: 'center',
-                fontSize: '14px',
-                color: '#666',
-                paddingTop: '32px',
-                paddingLeft: '16px',
-                paddingRight: '16px'
-            }}>
+            <div className="footer-notice">
                 ※ 이 사이트는 YES24 및 Amazon 제휴 프로그램을 통해 운영되며,<br />
                 도서 구매 시 제작자에게 소정의 수익이 돌아옵니다.
             </div>
 
-            <div style={{
-                display: 'flex',
-                flexWrap: 'wrap',
-                flexDirection: 'row',
-                justifyContent: 'center',
-                gap: '16px',
-                padding: '24px 0',
-                background: '#f9f9f9',
-                borderTop: '1px solid #ddd'
-            }}>
+            <div className="banner-bar">
                 {process.env.NEXT_PUBLIC_YES24_BANNER && (
                     <>
                         <a
@@ -104,10 +62,6 @@ export default function Layout({ selectedAge, setSelectedAge, children }: Layout
                                 alt="YES24 배너"
                                 width="120"
                                 height="60"
-                                style={{
-                                    borderRadius: '8px',
-                                    boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
-                                }}
                             />
                         </a>
                         <img
@@ -119,7 +73,6 @@ export default function Layout({ selectedAge, setSelectedAge, children }: Layout
                         />
                     </>
                 )}
-
                 {process.env.NEXT_PUBLIC_AMAZON_BANNER && (
                     <a
                         target="_blank"
@@ -131,10 +84,6 @@ export default function Layout({ selectedAge, setSelectedAge, children }: Layout
                             alt="Amazon 배너"
                             width="120"
                             height="60"
-                            style={{
-                                borderRadius: '8px',
-                                boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
-                            }}
                         />
                     </a>
                 )}
