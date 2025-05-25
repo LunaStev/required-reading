@@ -1,42 +1,68 @@
+/* 전체 레이아웃에 적용될 기본 스타일 */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: #f9fafb;
+    color: #111827;
+    line-height: 1.75;
+}
+
+/* 카드 스타일 */
 .card {
     display: block;
     width: 100%;
-    background-color: #fff;
-    border: 1px solid #e0e0e0;
-    border-radius: 14px;
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb; /* gray-200 */
+    border-radius: 16px;
     padding: 24px;
     text-decoration: none;
-    color: #111;
-    transition: all 0.2s ease;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+    color: #111827; /* gray-900 */
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
 }
 
 .card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-    border-color: #66aaff;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+    border-color: #3b82f6; /* blue-500 */
 }
 
+/* 카드 내 제목 */
 .card .title {
-    font-size: 20px;
-    font-weight: 600;
-    color: #222;
-    margin-bottom: 8px;
-    letter-spacing: -0.3px;
+    font-size: 1.25rem; /* 20px */
+    font-weight: 700;
+    color: #1f2937; /* gray-800 */
+    margin-bottom: 10px;
+    letter-spacing: -0.2px;
 }
 
+/* 카드 내 메타 정보 */
 .card .meta {
-    font-size: 13px;
-    color: #666;
+    font-size: 0.875rem; /* 14px */
+    color: #6b7280; /* gray-500 */
     line-height: 1.6;
 }
 
+/* 책이 없을 때 보여지는 메시지 */
 .no-books-message {
     padding: 24px;
     text-align: center;
-    font-size: 15px;
-    color: #888;
-    background-color: #f9f9f9;
-    border: 1px dashed #ccc;
+    font-size: 1rem;
+    color: #6b7280; /* gray-500 */
+    background-color: #f3f4f6; /* gray-100 */
+    border: 1px dashed #d1d5db; /* gray-300 */
     border-radius: 12px;
+    font-style: italic;
+}
+
+/* 링크 스타일 (기본적으로 카드 내부 외 링크에 사용) */
+a {
+    color: #2563eb; /* blue-600 */
+    text-decoration: underline;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #1d4ed8; /* blue-700 */
 }
