@@ -50,6 +50,10 @@ type BookDetailProps = {
 export default function BookDetail({ book }: BookDetailProps) {
     return (
         <Layout selectedAge={book.age}>
+            <Head>
+                <title>{book.title} - 필독서 정보</title>
+                <meta name="description" content={`"${book.title}"의 필독서 정보 및 요약`} />
+            </Head>
             <div className="book-detail-container">
                 <h1>{book.title}</h1>
                 <h2>{book.author}</h2>

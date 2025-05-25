@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Layout from '../components/Layout';
+import Head from 'next/head';
 
 export async function getServerSideProps() {
     const client = await clientPromise;
@@ -58,6 +59,10 @@ export default function Home({ books }: HomeProps) {
 
     return (
         <Layout selectedAge={selectedAge} setSelectedAge={setSelectedAge}>
+            <Head>
+                <title>필독서 정보</title>
+                <meta name="description" content={`"필독서 정보 및 요약`} />
+            </Head>
             <div className="space-y-4">
                 {filteredBooks.length === 0 ? (
                     <div className="no-books-message">
