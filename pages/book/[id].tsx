@@ -2,6 +2,7 @@ import { ObjectId } from 'mongodb';
 import clientPromise from '../../lib/mongodb';
 import Layout from '../../components/Layout';
 import { GetServerSidePropsContext } from 'next';
+import Head from 'next/head';
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
     const { params } = context;
