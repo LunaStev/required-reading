@@ -48,23 +48,6 @@ type AdminProps = {
     }[];
 };
 
-type Book = {
-    id: string;
-    title: string;
-    author?: string;
-    description?: string;
-    age: string;
-    year?: number;
-    pages?: number;
-    difficulty?: number;
-    keywords?: string[];
-    highlight?: string;
-    lang_original?: string;
-    recommended_by?: string;
-    link_kr?: string;
-    link_original?: string;
-};
-
 export default function Admin({ authorized, books }: AdminProps) {
     const [pw, setPw] = useState('');
 
@@ -97,7 +80,30 @@ export default function Admin({ authorized, books }: AdminProps) {
 
             <form method="POST" action="/api/add-book">
                 <h2>➕ 책 추가</h2>
-                {/* input, select, textarea는 그대로 유지 */}
+                <input name="title" placeholder="제목" required />
+                <input name="author" placeholder="저자" required />
+                <label>추천 나이대:</label>
+                <select name="age" required>
+                    {['10대', '20대', '30대', '40대', '50대', '60대', '70대', '80대', '90대', '100대'].map(age => (
+                        <option key={age} value={age}>{age}</option>
+                    ))}
+                </select>
+                <textarea name="description" placeholder="설명" />
+                <input name="year" placeholder="출판년도" type="number" />
+                <input name="pages" placeholder="페이지 수" type="number" />
+                <label>난이도:</label>
+                <select name="difficulty" required defaultValue="3">
+                    {[1, 2, 3, 4, 5].map(level => (
+                        <option key={level} value={level}>{level} - {'⭐'.repeat(level)}</option>
+                    ))}
+                </select>
+                <input name="keywords" placeholder="쉼표로 구분된 키워드" />
+                <input name="highlight" placeholder="명문장" />
+                <input name="lang_original" placeholder="원서 언어" />
+                <input name="link_kr" placeholder="한국어 링크" />
+                <input name="link_original" placeholder="원서 링크" />
+                <input name="recommended_by" placeholder="추천 기관/출처 (예: 서울대학교)" />
+                <button type="submit">추가</button>
             </form>
 
             <hr />
