@@ -1,151 +1,84 @@
-/* 전체 배경과 기본 폰트 스타일 */
+/* 📚 전체 배경과 글꼴 */
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Noto Sans KR', sans-serif;
-    background-color: #f0f4f8;
-    color: #1e293b; /* slate-800 */
-    line-height: 1.8;
+    font-family: 'Noto Serif KR', 'Noto Sans KR', serif;
+    background-color: #fbf9f4;
+    color: #1e1e1e;
+    line-height: 1.75;
+    font-size: 16px;
 }
 
-/* 카드 스타일 */
+/* ✅ 콘텐츠 기본 여백 */
+.main-content {
+    padding: 40px 5vw;
+    background-color: #fbf9f4;
+}
+
+/* 📘 카드 디자인 */
 .card {
     display: block;
-    width: 100%;
-    background: linear-gradient(to bottom right, #ffffff, #f9fafb);
-    border: 1px solid #dbeafe; /* blue-100 */
-    border-radius: 18px;
-    padding: 28px;
+    background: #ffffff;
+    border-radius: 16px;
+    border: 1px solid #e2ddd0;
+    padding: 24px 28px;
+    margin-bottom: 20px;
     text-decoration: none;
     color: inherit;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-    position: relative;
-    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+    transition: all 0.2s ease;
 }
 
 .card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
-    border-color: #3b82f6; /* blue-500 */
-    background: linear-gradient(to bottom right, #ffffff, #eff6ff);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
 }
 
-/* 카드 제목 */
 .card .title {
-    font-size: 1.5rem; /* 24px */
+    font-size: 1.5rem;
     font-weight: 700;
-    color: #1e40af; /* blue-800 */
     margin-bottom: 10px;
+    color: #2e2e2e;
 }
 
-/* 카드 메타 정보 */
 .card .meta {
     font-size: 0.95rem;
-    color: #475569; /* slate-600 */
+    color: #5f5f5f;
     line-height: 1.7;
 }
 
-/* 책이 없을 때 표시되는 메시지 */
+/* 📝 필터 없음 안내 */
 .no-books-message {
     padding: 32px;
     text-align: center;
-    font-size: 1.1rem;
-    color: #64748b; /* slate-500 */
-    background-color: #e2e8f0; /* slate-200 */
-    border: 2px dashed #94a3b8; /* slate-400 */
-    border-radius: 14px;
+    font-size: 1rem;
+    color: #999;
+    background-color: #f6f3ec;
+    border: 1px dashed #d4cbbb;
+    border-radius: 12px;
     font-style: italic;
 }
 
-/* 전체 링크 스타일 */
+/* 🔗 링크 */
 a {
-    color: #1d4ed8; /* blue-700 */
-    text-decoration: underline;
-    transition: color 0.2s ease;
+    color: #4b5c8a;
+    text-decoration: none;
 }
 
 a:hover {
-    color: #1e3a8a; /* blue-900 */
+    color: #2d3d6c;
+    text-decoration: underline;
 }
 
-.admin-container {
-    max-width: 720px;
-    margin: 40px auto;
-    padding: 32px;
-    background-color: #ffffff;
-    border: 1px solid #e2e8f0;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-}
-
-.admin-container h1 {
-    font-size: 1.75rem;
-    margin-bottom: 24px;
-    color: #1e293b;
-}
-
-.admin-container h2 {
-    font-size: 1.25rem;
-    margin-top: 32px;
-    margin-bottom: 16px;
-    color: #334155;
-}
-
-.admin-container form input,
-.admin-container form select,
-.admin-container form textarea {
-    width: 100%;
-    margin-bottom: 12px;
-    padding: 10px 12px;
-    font-size: 0.95rem;
-    border: 1px solid #cbd5e1;
-    border-radius: 8px;
-    background-color: #f9fafb;
-    transition: border-color 0.2s;
-}
-
-.admin-container form input:focus,
-.admin-container form select:focus,
-.admin-container form textarea:focus {
-    outline: none;
-    border-color: #3b82f6;
-    background-color: #fff;
-}
-
-.admin-container button {
-    background-color: #3b82f6;
-    color: white;
-    border: none;
-    padding: 10px 16px;
-    border-radius: 8px;
-    font-size: 0.95rem;
-    cursor: pointer;
-    transition: background-color 0.2s;
-}
-
-.admin-container button:hover {
-    background-color: #2563eb;
-}
-
-.admin-container ul {
-    margin-top: 16px;
-    padding-left: 20px;
-}
-
-.admin-container li {
-    margin-bottom: 10px;
-    font-size: 0.95rem;
-}
-
+/* 🧭 나이 필터 네비게이션 */
 .age-nav {
     display: flex;
     overflow-x: auto;
     white-space: nowrap;
     gap: 12px;
-    padding: 12px 16px;
-    border-bottom: 1px solid #d1d5db; /* gray-300 */
-    background-color: #f8fafc;
+    padding: 14px 20px;
+    background-color: #f1eee7;
+    border-bottom: 1px solid #dad2c2;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -157,54 +90,112 @@ a:hover {
 }
 
 .age-nav-button {
-    background-color: #e2e8f0;
-    color: #1e293b;
+    background-color: #e4dfd3;
+    color: #333;
     border: none;
-    padding: 8px 16px;
+    padding: 8px 18px;
     border-radius: 9999px;
     font-size: 0.95rem;
-    white-space: nowrap;
     cursor: pointer;
-    text-decoration: none;
-    transition: all 0.2s ease;
-    flex-shrink: 0;
-}
-
-.age-nav-button:hover {
-    background-color: #cbd5e1;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    white-space: nowrap;
 }
 
 .age-nav-button.selected {
-    background-color: #1e3a8a;
+    background-color: #4b5c8a;
     color: white;
 }
 
-.main-content {
-    padding: 24px;
-    padding-left: max(16px, 4vw);
-    padding-right: max(16px, 4vw);
+.age-nav-button:hover {
+    background-color: #d8d1c2;
 }
 
+/* 📄 상세 페이지 본문 텍스트 */
+.book-detail p {
+    font-size: 0.98rem;
+    color: #444;
+    margin-bottom: 10px;
+}
+
+/* 📣 푸터 안내 */
 .footer-notice {
     text-align: center;
-    font-size: 14px;
-    color: #64748b;
-    padding-top: 32px;
-    padding-left: 16px;
-    padding-right: 16px;
+    font-size: 13px;
+    color: #888;
+    padding: 36px 16px;
+    background-color: #f9f8f4;
+    border-top: 1px solid #e7e2d5;
 }
 
+/* 🖼️ 배너 */
 .banner-bar {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 16px;
     padding: 24px 0;
-    background: #f9fafb;
-    border-top: 1px solid #e2e8f0;
+    background-color: #f1eee7;
+    border-top: 1px solid #d8d0c2;
 }
 
 .banner-bar img {
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* 🛠️ 관리자 전용 */
+.admin-container {
+    max-width: 720px;
+    margin: 60px auto;
+    padding: 32px;
+    background-color: #fff;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.admin-container h1 {
+    font-size: 1.75rem;
+    color: #1a1a1a;
+    margin-bottom: 20px;
+}
+
+.admin-container h2 {
+    font-size: 1.2rem;
+    margin: 24px 0 16px;
+    color: #333;
+}
+
+.admin-container form input,
+.admin-container form select,
+.admin-container form textarea {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 12px;
+    font-size: 0.95rem;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+}
+
+.admin-container form input:focus,
+.admin-container form select:focus,
+.admin-container form textarea:focus {
+    outline: none;
+    border-color: #4b5c8a;
+    background-color: #fff;
+}
+
+.admin-container button {
+    background-color: #4b5c8a;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    cursor: pointer;
+}
+
+.admin-container button:hover {
+    background-color: #2f3f6a;
 }
