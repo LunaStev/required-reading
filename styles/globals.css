@@ -68,3 +68,72 @@ a {
 a:hover {
     color: #1e3a8a; /* blue-900 */
 }
+
+.admin-container {
+    max-width: 720px;
+    margin: 40px auto;
+    padding: 32px;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.admin-container h1 {
+    font-size: 1.75rem;
+    margin-bottom: 24px;
+    color: #1e293b;
+}
+
+.admin-container h2 {
+    font-size: 1.25rem;
+    margin-top: 32px;
+    margin-bottom: 16px;
+    color: #334155;
+}
+
+.admin-container form input,
+.admin-container form select,
+.admin-container form textarea {
+    width: 100%;
+    margin-bottom: 12px;
+    padding: 10px 12px;
+    font-size: 0.95rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    background-color: #f9fafb;
+    transition: border-color 0.2s;
+}
+
+.admin-container form input:focus,
+.admin-container form select:focus,
+.admin-container form textarea:focus {
+    outline: none;
+    border-color: #3b82f6;
+    background-color: #fff;
+}
+
+.admin-container button {
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.admin-container button:hover {
+    background-color: #2563eb;
+}
+
+.admin-container ul {
+    margin-top: 16px;
+    padding-left: 20px;
+}
+
+.admin-container li {
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+}
