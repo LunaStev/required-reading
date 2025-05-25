@@ -1,68 +1,70 @@
-/* 전체 레이아웃에 적용될 기본 스타일 */
+/* 전체 배경과 기본 폰트 스타일 */
 body {
     margin: 0;
     padding: 0;
     font-family: 'Noto Sans KR', sans-serif;
-    background-color: #f9fafb;
-    color: #111827;
-    line-height: 1.75;
+    background-color: #f0f4f8;
+    color: #1e293b; /* slate-800 */
+    line-height: 1.8;
 }
 
 /* 카드 스타일 */
 .card {
     display: block;
     width: 100%;
-    background-color: #ffffff;
-    border: 1px solid #e5e7eb; /* gray-200 */
-    border-radius: 16px;
-    padding: 24px;
+    background: linear-gradient(to bottom right, #ffffff, #f9fafb);
+    border: 1px solid #dbeafe; /* blue-100 */
+    border-radius: 18px;
+    padding: 28px;
     text-decoration: none;
-    color: #111827; /* gray-900 */
-    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+    color: inherit;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
 
 .card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
     border-color: #3b82f6; /* blue-500 */
+    background: linear-gradient(to bottom right, #ffffff, #eff6ff);
 }
 
-/* 카드 내 제목 */
+/* 카드 제목 */
 .card .title {
-    font-size: 1.25rem; /* 20px */
+    font-size: 1.5rem; /* 24px */
     font-weight: 700;
-    color: #1f2937; /* gray-800 */
+    color: #1e40af; /* blue-800 */
     margin-bottom: 10px;
-    letter-spacing: -0.2px;
 }
 
-/* 카드 내 메타 정보 */
+/* 카드 메타 정보 */
 .card .meta {
-    font-size: 0.875rem; /* 14px */
-    color: #6b7280; /* gray-500 */
-    line-height: 1.6;
+    font-size: 0.95rem;
+    color: #475569; /* slate-600 */
+    line-height: 1.7;
 }
 
-/* 책이 없을 때 보여지는 메시지 */
+/* 책이 없을 때 표시되는 메시지 */
 .no-books-message {
-    padding: 24px;
+    padding: 32px;
     text-align: center;
-    font-size: 1rem;
-    color: #6b7280; /* gray-500 */
-    background-color: #f3f4f6; /* gray-100 */
-    border: 1px dashed #d1d5db; /* gray-300 */
-    border-radius: 12px;
+    font-size: 1.1rem;
+    color: #64748b; /* slate-500 */
+    background-color: #e2e8f0; /* slate-200 */
+    border: 2px dashed #94a3b8; /* slate-400 */
+    border-radius: 14px;
     font-style: italic;
 }
 
-/* 링크 스타일 (기본적으로 카드 내부 외 링크에 사용) */
+/* 전체 링크 스타일 */
 a {
-    color: #2563eb; /* blue-600 */
+    color: #1d4ed8; /* blue-700 */
     text-decoration: underline;
     transition: color 0.2s ease;
 }
 
 a:hover {
-    color: #1d4ed8; /* blue-700 */
+    color: #1e3a8a; /* blue-900 */
 }
