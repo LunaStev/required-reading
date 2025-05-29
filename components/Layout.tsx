@@ -49,6 +49,10 @@ export default function Layout({ selectedAge, setSelectedAge, children }: Layout
                 도서 구매 시 제작자에게 소정의 수익이 돌아옵니다.
             </div>
 
+            <div className="privacy-link">
+                <Link href="/privacy-policy">개인정보처리방침</Link>
+            </div>
+
             <div className="banner-bar">
                 {process.env.NEXT_PUBLIC_YES24_BANNER && (
                     <>

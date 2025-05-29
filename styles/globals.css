@@ -250,3 +250,47 @@ a:hover {
 .admin-container button:hover {
     background-color: #2f3f6a;
 }
+
+.privacy-link {
+    text-align: center;
+    margin-top: 12px;
+    font-size: 13px;
+    color: #888;
+}
+
+.privacy-link a {
+    color: #888;
+    text-decoration: underline;
+}
+
+.privacy-policy {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 2rem;
+    line-height: 1.7;
+    font-size: 15px;
+    color: #333;
+}
+
+.privacy-policy h1 {
+    font-size: 24px;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 0.5rem;
+}
+
+.privacy-policy h2 {
+    font-size: 18px;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    color: #222;
+}
+
+.privacy-policy p {
+    margin: 0.5rem 0 1.5rem 0;
+}
+
+.privacy-policy a {
+    color: #3366cc;
+    text-decoration: underline;
+}
